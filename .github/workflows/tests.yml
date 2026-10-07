@@ -1,4 +1,5 @@
 name: Tests Energy Dashboard
+
 on:
   push:
   pull_request:
@@ -19,5 +20,12 @@ jobs:
       - name: Installer les dépendances
         run: pip install -r requirements.txt
 
+      - name: Vérifier la structure
+        run: |
+          pwd
+          find . -maxdepth 3 -type f
+
       - name: Lancer les tests
-        run: pytest -s
+        env:
+          PYTHONPATH: .
+        run: python -m pytest -s
