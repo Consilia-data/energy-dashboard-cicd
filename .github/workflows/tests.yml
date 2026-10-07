@@ -1,5 +1,4 @@
 name: Tests Energy Dashboard
-
 on:
   push:
   pull_request:
